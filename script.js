@@ -8,6 +8,7 @@ const main = document.getElementById("main");
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 
+// Get initial movies
 getMovies(API_URL);
 
 async function getMovies(url) {
@@ -25,7 +26,6 @@ function showMovies(movies) {
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
     movieEl.innerHTML = `
-    
       <img src="${IMG_PATH + poster_path}" alt="${title}" />
       <div class="movie-info">
         <h3>${title}</h3>
@@ -35,7 +35,6 @@ function showMovies(movies) {
         <h3>overview</h3>
        ${overview}
       </div>
-   
     `;
     main.appendChild(movieEl);
   });
